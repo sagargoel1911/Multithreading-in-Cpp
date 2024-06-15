@@ -16,7 +16,7 @@ void run(int num)
 	if (num >= 5)
 		return;
 	m.lock();
-	cout << 1 << endl;
+	cout << num << endl;
 	run(num + 1);
 	m.unlock();
 }
