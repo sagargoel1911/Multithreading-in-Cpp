@@ -23,6 +23,8 @@ using namespace std;
 
 // unlock happens in the destrucotr of the object we make;
 
+// lock_guard has more restrictions, but is also lighter
+
 std::mutex m1;
 int buffer = 0;
 
