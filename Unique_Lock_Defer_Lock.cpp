@@ -28,10 +28,11 @@ using namespace std;
 std::mutex m1;
 int buffer = 0;
 
-// EXAMPLE 1
+// EXAMPLE 2
 void task(const char *threadNumber, int loopFor)
 {
-	std::unique_lock<mutex> lock(m1); // Automatically calls lock on mutex m1
+	std::unique_lock<mutex> lock(m1, defer_lock);
+	lock.lock();
 	for (int i = 0; i < loopFor; ++i)
 	{
 		buffer++;
